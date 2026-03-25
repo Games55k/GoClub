@@ -1,0 +1,18 @@
+baseURL = 'https://leonincs.github.io/GoClub/'
+languageCode = 'zh-cn'
+title = 'GoClub'
+theme = 'hugo-book'
+
+disablePathToLower = true
+enableGitInfo = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  BookTheme = 'light'
+  BookToC = true
+  BookSection = 'docs'
+  BookSearch = true
