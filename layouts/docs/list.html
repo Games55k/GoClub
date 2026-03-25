@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <article class="markdown book-article">
+    {{- .Content -}}
+
+    {{ if eq .File.Path "docs/contributors/_index.md" }}
+      {{ $contributors := hugo.Data.contributors }}
+      <section class="contributors-section">
+        {{ if $contributors }}
+          <div class="contributors-grid">
+            {{ range $contributors }}
+              <article class="contributor-card">
+                <a class="contributor-avatar-link" href="{{ .html_url }}" target="_blank" rel="noopener">
+                  <img
+                    class="contributor-avatar"
+                    src="{{ .avatar_url }}"
+                    alt="{{ .login }} avatar"
+                    loading="lazy"
+                  />
+                </a>
+                <div class="contributor-body">
+                  <h2 class="contributor-name">
+                    <a href="{{ .html_url }}" target="_blank" rel="noopener">{{ .login }}</a>
+                  </h2>
+                  {{ with .role }}
+                    <p class="contributor-role">{{ . }}</p>
+                  {{ end }}
+                  {{ with .name }}
+                    <p class="contributor-fullname">{{ . }}</p>
+                  {{ end }}
+                  <p class="contributor-meta">
+                    <a href="{{ .html_url }}" target="_blank" rel="noopener">{{ .html_url }}</a>
+                  </p>
+                  <p class="contributor-meta">Merged PRs: {{ .merged_prs }}</p>
+                </div>
+              </article>
+            {{ end }}
+          </div>
+        {{ else }}
+          <p>当前还没有检测到贡献者数据。</p>
+        {{ end }}
+      </section>
+    {{ end }}
+  </article>
+{{ end }}

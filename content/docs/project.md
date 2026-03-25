@@ -1,8 +1,8 @@
 ---
 title: "项目介绍"
-weight: 1
 type: docs
 bookToC: true
+bookHidden: true
 ---
 
 # GoClub
