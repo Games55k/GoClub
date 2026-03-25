@@ -7,4 +7,49 @@
   .book-article h1 .page-home-link:hover {
     text-decoration: underline;
   }
+
+  .contributors-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 1.5rem;
+  }
+
+  .contributor-card {
+    border: 1px solid var(--gray-200, #e5e7eb);
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    background: var(--body-background, #fff);
+  }
+
+  .contributor-avatar-link {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .contributor-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    object-fit: cover;
+  }
+
+  .contributor-body {
+    min-width: 0;
+  }
+
+  .contributor-name {
+    margin: 0 0 0.2rem;
+    font-size: 1.05rem;
+  }
+
+  .contributor-fullname,
+  .contributor-meta {
+    margin: 0.2rem 0;
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
 </style>
