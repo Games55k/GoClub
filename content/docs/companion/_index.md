@@ -10,4 +10,3 @@ bookCollapseSection: true
 
 ## 当前内容
 
-- [栏目说明]({{< relref "/docs/companion/overview.md" >}})
